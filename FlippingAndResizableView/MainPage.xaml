@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:FlippingAndResizableView.Controls;assembly=FlippingAndResizableView"
+             xmlns:flippingAndResizableView="clr-namespace:FlippingAndResizableView;assembly=FlippingAndResizableView"
+             x:Class="FlippingAndResizableView.MainPage"
+             Padding="5,20" BackgroundColor="{StaticResource BlackColor}">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        
+        <helpers:XNFlipView Grid.Row="1" x:Name="FlipView">
+
+            <helpers:XNFlipView.FrontView>
+                <flippingAndResizableView:BitcoinView x:Name="BitcoinFrontView" />
+            </helpers:XNFlipView.FrontView>
+
+            <helpers:XNFlipView.BackView>
+               <flippingAndResizableView:RequestBitcoinsView x:Name="RequestBitcoinsBackView" />
+            </helpers:XNFlipView.BackView>
+
+        </helpers:XNFlipView>
+    </Grid>
+
+</ContentPage>

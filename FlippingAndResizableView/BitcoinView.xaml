@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abstractions:ViewWithFlipEvent xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:devsDna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             xmlns:abstractions="clr-namespace:FlippingAndResizableView.Abstractions;assembly=FlippingAndResizableView"
+             x:Class="FlippingAndResizableView.BitcoinView">
+   <Frame VerticalOptions="FillAndExpand" IsClippedToBounds="true"
+                       HorizontalOptions="FillAndExpand" HasShadow="false" CornerRadius="20">
+                    <Grid BackgroundColor="{StaticResource BlackColor}" RowSpacing="0.5" ColumnSpacing="0.5" Margin="-20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="40" />
+                            </Grid.ColumnDefinitions>
+
+                            <devsDna:GradientBoxView Grid.Column="0" Grid.ColumnSpan="3"
+                                                     TopColor="#F3B1A2"
+                                                     BottomColor="#DE9381" />
+
+                            <Label Grid.Column="1"
+                                   FontSize="Large"
+                                   Text="Bitcoin"
+                                   TextColor="{StaticResource TitleTextColor}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
+                            <Button Grid.Column="2" Image="arrow_left_and_right.png" Margin="0,0,10,0"
+                                    HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent"
+                                    Clicked="OnExpandExchange" />
+                        </Grid>
+
+                        <Grid Grid.Row="1" BackgroundColor="{StaticResource BlackColor}" IsClippedToBounds="true">
+                            <Grid x:Name="ExchangeView" RowSpacing="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="ExchangeRow" Height="0" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Padding="20, 7.5" HeightRequest="100" BackgroundColor="#DE9381">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2.3*" />
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HasShadow="false"
+                                           CornerRadius="4" Opacity="0.15" BackgroundColor="White" />
+
+                                    <Label Grid.Row="0" Grid.Column="0" FontSize="Large" TextColor="{StaticResource TitleTextColor}" Text="1"
+                                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    <Label Grid.Row="0" Grid.Column="1" FontSize="Large" TextColor="{StaticResource TitleTextColor}"
+                                           Text="&#60;&#62;" HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" Opacity="0.75" />
+                                    <Label Grid.Row="0" Grid.Column="2" FontSize="Large" TextColor="{StaticResource TitleTextColor}"
+                                           Text="572,12" HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" />
+
+                                    <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" TextColor="{StaticResource TitleTextColor}"
+                                           Text="BTC" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    <Label Grid.Row="1" Grid.Column="2" FontSize="Medium" TextColor="{StaticResource TitleTextColor}"
+                                           Text="USD" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+
+                                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Small"
+                                           TextColor="{StaticResource TitleTextColor}" Text="Market: BitStamp" HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" Opacity="0.75" />
+                                </Grid>
+
+                                <Grid Grid.Row="1" RowSpacing="1">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid RowSpacing="0" ColumnSpacing="0">
+                                        <devsDna:GradientBoxView
+                                            TopColor="#6E748C"
+                                            BottomColor="#5B627C" />
+
+                                        <Grid Grid.Row="0" Margin="20, 10" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Row="0" Grid.Column="0" FontSize="Medium"
+                                                   TextColor="White" Text="Balance:"
+                                                   Opacity="0.5"
+                                                   HorizontalTextAlignment="Start"
+                                                   VerticalTextAlignment="Center" />
+
+                                            <Label Grid.Row="1" Grid.Column="0"
+                                                   Opacity="0.9"
+                                                   TextColor="White"
+                                                   HorizontalTextAlignment="Start"
+                                                   VerticalTextAlignment="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="2,3456" FontSize="Large" />
+                                                        <Span Text=" BTC" FontSize="Medium" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                            <Label Grid.Row="1" Grid.Column="1" FontSize="Medium"
+                                                   TextColor="White" Text="1 201,27 USD"
+                                                   Opacity="0.5"
+                                                   HorizontalTextAlignment="End"
+                                                   VerticalTextAlignment="Center" />
+                                        </Grid>
+                                    </Grid>
+
+                                    <ContentView Grid.Row="1" >
+                                       <ListView x:Name="TransactionsListView" 
+                                                 BackgroundColor="#4A5068" 
+                                                 SeparatorColor="{StaticResource BlackColor}" 
+                                                 RowHeight="70"
+                                                 Header=".">
+                                           <ListView.HeaderTemplate>
+                                               <DataTemplate>
+                                                   <ContentView HeightRequest="40" Padding="20,0,0,0">
+                                                       <Label FontSize="Medium"
+                                                              TextColor="White" Text="Recent Transactions:"
+                                                              Opacity="0.5"
+                                                              HorizontalTextAlignment="Start"
+                                                              VerticalTextAlignment="Center" />
+                                                   </ContentView>
+                                               </DataTemplate>
+                                           </ListView.HeaderTemplate>
+                                           <ListView.ItemTemplate>
+                                               <DataTemplate>
+                                                    <ViewCell>
+                                                        <Grid Padding="20,10" ColumnSpacing="0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="100" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                            
+                                                            <Label Grid.Row="0" Grid.Column="1"
+                                                                   Opacity="0.9"
+                                                                   TextColor="White"
+                                                                   Text="{Binding TypeAndCurrencyBtc}"
+                                                                   HorizontalTextAlignment="Start"
+                                                                   VerticalTextAlignment="Center" />
+                                                            
+                                                            <Label Grid.Row="1" Grid.Column="1"
+                                                                FontSize="Medium"
+                                                                   TextColor="White" 
+                                                                   Text="{Binding Currency, StringFormat='{0} USD'}"
+                                                                   Opacity="0.5"
+                                                                   HorizontalTextAlignment="Start"
+                                                                   VerticalTextAlignment="Center" />
+                                                            
+                                                            <Label Grid.Row="0" Grid.Column="2"
+                                                                   FontSize="Medium"
+                                                                   TextColor="White" 
+                                                                   Text="{Binding Time, Converter={StaticResource DateTimeToStringConverter}}"
+                                                                   Opacity="0.5"
+                                                                   HorizontalTextAlignment="End"
+                                                                   VerticalTextAlignment="Center" />
+                                                        </Grid>
+                                                    </ViewCell>
+                                               </DataTemplate>
+                                           </ListView.ItemTemplate>
+                                       </ListView> 
+                                    </ContentView>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="2" ColumnSpacing="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <devsDna:GradientBoxView
+                                    TopColor="#525870"
+                                    BottomColor="#43495F" />
+                                <Button Image="bag_in.png" BackgroundColor="Transparent" Clicked="OnFlip" />
+                            </Grid>
+
+
+                            <Grid Grid.Column="1">
+                                <devsDna:GradientBoxView
+                                    TopColor="#525870"
+                                    BottomColor="#43495F" />
+                                <Button Image="rewind_time.png" BackgroundColor="Transparent" />
+                            </Grid>
+
+                            <Grid Grid.Column="2">
+                                <devsDna:GradientBoxView
+                                    TopColor="#525870"
+                                    BottomColor="#43495F" />
+                                <Button Image="bag_out.png" BackgroundColor="Transparent" />
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+                </Frame>
+</abstractions:ViewWithFlipEvent>

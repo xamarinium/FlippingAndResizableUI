@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abstractions:ViewWithFlipEvent xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:devsDna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             xmlns:abstractions="clr-namespace:FlippingAndResizableView.Abstractions;assembly=FlippingAndResizableView"
+             x:Class="FlippingAndResizableView.RequestBitcoinsView">
+    <Frame VerticalOptions="FillAndExpand" IsClippedToBounds="true"
+                       HorizontalOptions="FillAndExpand" HasShadow="false" CornerRadius="20">
+                    <Grid BackgroundColor="{StaticResource BlackColor}" RowSpacing="1" ColumnSpacing="0.5"
+                          Margin="-20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="40" />
+                            </Grid.ColumnDefinitions>
+
+                            <devsDna:GradientBoxView Grid.Column="0" Grid.ColumnSpan="3"
+                                                     TopColor="#6E748C"
+                                                     BottomColor="#5B627C" />
+
+                            <Label Grid.Column="1"
+                                   FontSize="Large"
+                                   Text="Request Bitcoins"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <ContentView Grid.Row="1" BackgroundColor="{StaticResource BlackColor}" IsClippedToBounds="true">
+                            <Grid BackgroundColor="#4A5068" Padding="20, 40" RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" FontSize="Medium"
+                                       TextColor="White" Text="Request Bitcoin Payment into address:"
+                                       Opacity="0.5"
+                                       LineBreakMode="WordWrap"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" />
+
+
+                                <Label Grid.Row="1" FontSize="Large"
+                                       TextColor="White" Text="1HB5XMLmzFVj8ALj6mfBsbifRoD4miY36v"
+                                       LineBreakMode="WordWrap"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" />
+
+                                <Frame Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"
+                                       HasShadow="False" BackgroundColor="White" CornerRadius="15">
+                                    <Image Source="qr_code.png" Aspect="AspectFit" Margin="-10" />
+                                </Frame>
+
+                            </Grid>
+                        </ContentView>
+
+                        <Grid Grid.Row="2" ColumnSpacing="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <devsDna:GradientBoxView
+                                    TopColor="#525870"
+                                    BottomColor="#43495F" />
+                                <Button Image="back.png" BackgroundColor="Transparent" Clicked="OnFlip" />
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <devsDna:GradientBoxView
+                                    TopColor="#525870"
+                                    BottomColor="#43495F" />
+                                <Button Image="share.png" BackgroundColor="Transparent" />
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+                </Frame>
+</abstractions:ViewWithFlipEvent>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:FlippingAndResizableView.Converters;assembly=FlippingAndResizableView"
+             x:Class="FlippingAndResizableView.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!--  Colors  -->
+            <Color x:Key="BlackColor">#393C4F</Color>
+            <Color x:Key="TitleTextColor">#422621</Color>
+            
+            <!--  Label  -->
+            <Style TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS">Museo Sans Rounded</On>
+                            <On Platform="Android">Fonts/MuseoSansRounded.otf#Museo Sans Rounded</On>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <!-- Converters -->
+            <converters:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />    
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
