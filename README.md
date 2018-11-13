@@ -1,5 +1,9 @@
 # FlippingAndResizableUI
-UI with  rotated view and  expandable panel in Xamarin.Forms
+UI with  rotated view and  expandable panel in Xamarin.Forms.
+<br>
+<br>
+If you want to get more often new examples, then please support our project. You can do that  <a href="https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJwdWJsaWNfa2V5IjoiaTk4MzA1OTc5NjM2IiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQnNC%2B0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJidXkiLCJsYW5ndWFnZSI6InJ1In0%3D&signature=gaRwakcro2PoX7FldpqVBHx%2BNYM%3D">here</a>.
+</td>
 
 <table>
   <tr>
@@ -7,8 +11,4 @@ UI with  rotated view and  expandable panel in Xamarin.Forms
   </tr>
 </table>
 
-<form method="POST" accept-charset="utf-8" action="undefined/api/3/checkout">
-<input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJwdWJsaWNfa2V5IjoiaTk4MzA1OTc5NjM2IiwiYW1vdW50IjoiNSIsImN1cnJlbmN5IjoiVVNEIiwiZGVzY3JpcHRpb24iOiLQnNC+0Lkg0YLQvtCy0LDRgCIsInR5cGUiOiJkb25hdGUiLCJsYW5ndWFnZSI6ImVuIn0=" />
-<input type="hidden" name="signature" value="3rBJZoTcp0zjpUtpZ/CgLfMhdF0=" />
-<input type="image" src="//static.liqpay.ua/buttons/d5en.radius.png" name="btn_text" />
-</form>
+
